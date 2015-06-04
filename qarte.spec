@@ -1,6 +1,6 @@
 Name:           qarte
-Version:        2.2.0
-Release:        3%{dist}
+Version:        2.3.0
+Release:        1%{dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -18,7 +18,7 @@ Qarte allows browsing the archive of arte+7 & arteLiveWeb sites
 and recording videos.
 
 %prep
-%setup -q 
+%setup -qn %{version}
 
 %build
 
@@ -61,6 +61,9 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %changelog
+* Wed May 27 2015 Milan Bouchet-Valat <nalimilan@club.fr> - 2.3.0-1
+- New upstream release.
+
 * Sat Sep 20 2014 Milan Bouchet-Valat <nalimilan@club.fr> - 2.2.0-3
 - Add back %%{dist} to Release.
 
