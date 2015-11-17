@@ -1,5 +1,5 @@
 Name:           qarte
-Version:        2.3.0
+Version:        2.6.0
 Release:        1%{dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
@@ -61,6 +61,9 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %changelog
+* Tue Nov 17 2015 Milan Bouchet-Valat <nalimilan@club.fr> - 2.6.0-1
+- New upstream release, fixing breakage due to change in Arte streams.
+
 * Wed May 27 2015 Milan Bouchet-Valat <nalimilan@club.fr> - 2.3.0-1
 - New upstream release.
 
