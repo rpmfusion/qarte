@@ -1,6 +1,6 @@
 Name:           qarte
 Version:        2.6.0
-Release:        1%{dist}
+Release:        2%{dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -61,6 +61,9 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %changelog
+* Tue Nov 17 2015 Milan Bouchet-Valat <nalimilan@club.fr> - 2.6.0-2
+- Fix FTBS by adding correct sources.
+
 * Tue Nov 17 2015 Milan Bouchet-Valat <nalimilan@club.fr> - 2.6.0-1
 - New upstream release, fixing breakage due to change in Arte streams.
 
