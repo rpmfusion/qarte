@@ -1,5 +1,5 @@
 Name:           qarte
-Version:        2.8.0
+Version:        3.2.0
 Release:        1%{dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
@@ -8,8 +8,7 @@ Group:          Applications/Multimedia
 Summary:        A browser for arte.tv web site
 BuildRequires:  desktop-file-utils
 BuildRequires:  gettext
-BuildRequires:  python2-devel
-Requires:       PyQt4
+Requires:       python3-qt5
 Requires:       rtmpdump
 BuildArch:      noarch
 
@@ -31,17 +30,13 @@ mkdir -p %{buildroot}%{_mandir}/man1/
 cp -p %{name}.1 %{buildroot}%{_mandir}/man1/%{name}.1 
 mkdir %{buildroot}%{_datadir}/%{name}
 cp -p *.py* %{buildroot}%{_datadir}/%{name}
-chmod 755 %{buildroot}%{_datadir}/%{name}/%{name}.py
 cp -pR medias %{buildroot}%{_datadir}/%{name}
-cp -pR VWidgets %{buildroot}%{_datadir}/%{name}
-cp -pR commonwidgets %{buildroot}%{_datadir}/%{name}
-cp -pR crontab %{buildroot}%{_datadir}/%{name}
+cp -pR gui %{buildroot}%{_datadir}/%{name}
 cp -pR locale %{buildroot}%{_datadir}
 
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc README
 %{_bindir}/%{name}
 %{_datadir}/applications/q_arte.desktop
 %{_mandir}/man1/%{name}.1.gz
@@ -61,6 +56,9 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %changelog
+* Mon Sep 12 2016 Milan Bouchet-Valat <nalimilan@club.fr> - 3.2.0-1
+- New upstream release.
+
 * Thu Feb 11 2016 Milan Bouchet-Valat <nalimilan@club.fr> - 2.8.0-1
 - New upstream release, fixing breakage due to change in Arte streams.
 
