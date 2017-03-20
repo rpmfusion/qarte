@@ -1,6 +1,6 @@
 Name:           qarte
 Version:        3.2.0
-Release:        1%{dist}
+Release:        2%{dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -56,6 +56,9 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %changelog
+* Mon Mar 20 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 3.2.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Mon Sep 12 2016 Milan Bouchet-Valat <nalimilan@club.fr> - 3.2.0-1
 - New upstream release.
 
