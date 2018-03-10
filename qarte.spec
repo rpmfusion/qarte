@@ -1,14 +1,18 @@
+# bytecompile with Python 3
+%global __python %{__python3}
+
 Name:           qarte
-Version:        3.2.0
-Release:        4%{dist}
+Version:        4.0.0
+Release:        1%{dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
 Group:          Applications/Multimedia
 Summary:        A browser for arte.tv web site
+
 BuildRequires:  desktop-file-utils
 BuildRequires:  gettext
-Requires:       python3-qt5
+BuildRequires:  python3-devel
 Requires:       rtmpdump
 BuildArch:      noarch
 
@@ -43,19 +47,14 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/%{name}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
-%post
-/bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
-
-%postun
-if [ $1 -eq 0 ] ; then
-    /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null
-    /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-fi
-
-%posttrans
-/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-
 %changelog
+* Sat Mar 10 2018 Martin Gansser <martinkg@fedoraproject.org> - 4.0.0-1
+- Update to 4.0.0
+- Add BR python3-devel
+- Add bytecompile with Python 3 %%global __python %%{__python3}
+- Remove RR python3-qt5
+- Remove scriptlets
+
 * Thu Mar 01 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 3.2.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
