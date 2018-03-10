@@ -3,17 +3,17 @@
 
 Name:           qarte
 Version:        4.0.0
-Release:        1%{dist}
+Release:        2%{dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
-Group:          Applications/Multimedia
 Summary:        A browser for arte.tv web site
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  gettext
 BuildRequires:  python3-devel
 Requires:       rtmpdump
+Requires:       qt5-qtmultimedia
 BuildArch:      noarch
 
 %description
@@ -48,6 +48,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Sat Mar 10 2018 Martin Gansser <martinkg@fedoraproject.org> - 4.0.0-2
+- Add RR qt5-qtmultimedia
+
 * Sat Mar 10 2018 Martin Gansser <martinkg@fedoraproject.org> - 4.0.0-1
 - Update to 4.0.0
 - Add BR python3-devel
