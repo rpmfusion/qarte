@@ -3,7 +3,7 @@
 
 Name:           qarte
 Version:        4.0.0
-Release:        2%{dist}
+Release:        3%{dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -13,7 +13,7 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  gettext
 BuildRequires:  python3-devel
 Requires:       rtmpdump
-Requires:       qt5-qtmultimedia
+Requires:       python3-qt5
 BuildArch:      noarch
 
 %description
@@ -48,6 +48,10 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Sat Mar 10 2018 Martin Gansser <martinkg@fedoraproject.org> - 4.0.0-3
+- Remove RR qt5-qtmultimedia, depends on python3-qt5
+- Re-add RR python3-qt5
+
 * Sat Mar 10 2018 Martin Gansser <martinkg@fedoraproject.org> - 4.0.0-2
 - Add RR qt5-qtmultimedia
 
