@@ -2,8 +2,8 @@
 %global __python %{__python3}
 
 Name:           qarte
-Version:        4.0.0
-Release:        3%{dist}
+Version:        4.1.0
+Release:        1%{?dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -48,6 +48,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Sun Apr 29 2018 Sérgio Basto <sergio@serjux.com> - 4.1.0-1
+- Update 4.1.0
+
 * Sat Mar 10 2018 Martin Gansser <martinkg@fedoraproject.org> - 4.0.0-3
 - Remove RR qt5-qtmultimedia, depends on python3-qt5
 - Re-add RR python3-qt5
