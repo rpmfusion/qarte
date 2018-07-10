@@ -3,7 +3,7 @@
 
 Name:           qarte
 Version:        4.1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -48,6 +48,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Tue Jul 10 2018 Miro Hrončok <mhroncok@redhat.com> - 4.1.0-2
+- Rebuilt for Python 3.7
+
 * Sun Apr 29 2018 Sérgio Basto <sergio@serjux.com> - 4.1.0-1
 - Update 4.1.0
 
