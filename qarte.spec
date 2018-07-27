@@ -3,7 +3,7 @@
 
 Name:           qarte
 Version:        4.4.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -48,6 +48,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Fri Jul 27 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 4.4.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Mon Jul 16 2018 Martin Gansser <martinkg@fedoraproject.org> - 4.4.0-1
 - Update to 4.4.0
 
