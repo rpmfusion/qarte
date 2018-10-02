@@ -2,8 +2,8 @@
 %global __python %{__python3}
 
 Name:           qarte
-Version:        4.4.0
-Release:        3%{?dist}
+Version:        4.5.0
+Release:        1%{?dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -48,6 +48,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Wed Sep 12 2018 Martin Gansser <martinkg@fedoraproject.org> - 4.5.0-1
+- Update to 4.5.0
+
 * Sun Aug 19 2018 Leigh Scott <leigh123linux@googlemail.com> - 4.4.0-3
 - Rebuilt for Fedora 29 Mass Rebuild binutils issue
 
