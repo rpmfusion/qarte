@@ -2,7 +2,7 @@
 %global __python %{__python3}
 
 Name:           qarte
-Version:        4.5.0
+Version:        4.6.0
 Release:        1%{?dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
@@ -48,6 +48,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Mon Dec 24 2018 Sérgio Basto <sergio@serjux.com> - 4.6.0-1
+- Update to 4.6.0
+
 * Wed Sep 12 2018 Martin Gansser <martinkg@fedoraproject.org> - 4.5.0-1
 - Update to 4.5.0
 
