@@ -2,7 +2,7 @@
 %global __python %{__python3}
 
 Name:           qarte
-Version:        4.10.0
+Version:        4.11.0
 Release:        1%{?dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
@@ -48,6 +48,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Mon Nov 02 2020 Martin Gansser <martinkg@fedoraproject.org> - 4.11.0-1
+- Update to 4.11.0
+
 * Mon Sep 07 2020 Martin Gansser <martinkg@fedoraproject.org> - 4.10.0-1
 - Update to 4.10.0
 
