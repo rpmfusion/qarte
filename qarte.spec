@@ -2,8 +2,8 @@
 %global __python %{__python3}
 
 Name:           qarte
-Version:        4.11.0
-Release:        3%{?dist}
+Version:        4.14.0
+Release:        1%{?dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -48,6 +48,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Sat Sep 04 2021 Sérgio Basto <sergio@serjux.com> - 4.14.0-1
+- Update to 4.14.0 rfbz #6060
+
 * Tue Aug 03 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 4.11.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
