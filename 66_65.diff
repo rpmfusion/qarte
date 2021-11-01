@@ -1,0 +1,92 @@
+=== modified file 'artetv.py'
+--- artetv.py	2021-11-01 08:04:48 +0000
++++ artetv.py	2021-11-01 09:33:11 +0000
+@@ -74,6 +74,7 @@
+         self.categories = []
+         self.categories_videos = {}
+         self.culture_at_home = {}
++        self.current_category = "arte+7"
+         self.is_in_category = False
+         self.is_loading = False
+         self.loading_aborted = False
+@@ -134,6 +135,7 @@
+         if is_videos:
+             self.ui.categories_cmb.currentTextChanged.connect(
+                                         self.change_category)
++            self.ui.refresh_btn.clicked.connect(self.reload_category)
+ 
+         self.remove_old_videos()
+ 
+@@ -203,6 +205,10 @@
+ 
+             self.is_in_category = True
+             self.ui.arte_list.display_category(selection)
++            self.current_category = name
++
++    def reload_category(self):
++        self.change_category(self.current_category)
+ 
+     def display_category_content(self, idx):
+         cat = self.ui.arte_list.video_items[idx]
+@@ -213,6 +219,7 @@
+ 
+         else:
+             self.display_sub_category(cat)
++            self.ui.refresh_btn.setEnabled(True)
+ 
+     def display_sub_category(self, category):
+         url = category.item.url
+
+=== modified file 'data.py'
+--- data.py	2021-08-23 08:02:22 +0000
++++ data.py	2021-11-01 09:33:11 +0000
+@@ -11,7 +11,7 @@
+ # Constants list, XXX don't forget to update VERSION if needed.
+ 
+ 
+-VERSION = (4, 14, 0)
++VERSION = (4, 15, 0)
+ 
+ VERSION_STR = '.'.join(str(i) for i in VERSION)
+ 
+
+=== modified file 'gui/mainui.py'
+--- gui/mainui.py	2021-11-01 08:04:48 +0000
++++ gui/mainui.py	2021-11-01 09:33:11 +0000
+@@ -96,6 +96,13 @@
+         self.categories_cmb = QComboBox(self)
+         self.categories_cmb.setMinimumSize(200, 24)
+         self.hl_2.addWidget(self.categories_cmb)
++        self.refresh_btn = QToolButton(self.widget1)
++        icon2 = QIcon()
++        icon2.addPixmap(QPixmap("medias/refresh.png"))
++        self.refresh_btn.setIcon(icon2)
++        self.refresh_btn.setIconSize(QSize(20, 20))
++        self.refresh_btn.setEnabled(False)
++        self.hl_2.addWidget(self.refresh_btn)
+         spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+         self.hl_2.addItem(spacer)
+         self.sizer_wdg = HorizontalSlider(self.widget1)
+
+=== modified file 'qarte'
+--- qarte	2021-08-23 08:57:52 +0000
++++ qarte	2021-11-01 09:33:11 +0000
+@@ -5,7 +5,7 @@
+ # This file is part of qarte-4
+ #    
+ # Author: Vincent Vande Vyvre <vincent.vandevyvre@oqapy.eu>
+-# Copyright: 2011-2020 Vincent Vande Vyvre
++# Copyright: 2011-2021 Vincent Vande Vyvre
+ # Licence: GPL3
+ # Home page: https://launchpad.net/qarte
+ #
+@@ -31,7 +31,7 @@
+ import platform
+ import locale
+ 
+-VERSION_STR = "4.14.0"
++VERSION_STR = "4.15.0"
+ 
+ from PyQt5.QtWidgets import QApplication
+ 
+

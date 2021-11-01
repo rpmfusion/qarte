@@ -3,7 +3,7 @@
 
 Name:           qarte
 Version:        4.14.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -15,13 +15,16 @@ BuildRequires:  python3-devel
 Requires:       rtmpdump
 Requires:       python3-qt5
 BuildArch:      noarch
+Patch1:         65_64.diff
+Patch2:         66_65.diff
+
 
 %description
 Qarte allows browsing the archive of arte+7 & arteLiveWeb sites
 and recording videos.
 
 %prep
-%setup -q
+%autosetup -p0
 
 %build
 
@@ -48,6 +51,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Mon Nov 01 2021 Sérgio Basto <sergio@serjux.com> - 4.14.0-2
+- add fixes from upstream, rfbz #6161
+
 * Sat Sep 04 2021 Sérgio Basto <sergio@serjux.com> - 4.14.0-1
 - Update to 4.14.0 rfbz #6060
 
