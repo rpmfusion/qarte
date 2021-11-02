@@ -2,8 +2,8 @@
 %global __python %{__python3}
 
 Name:           qarte
-Version:        4.14.0
-Release:        2%{?dist}
+Version:        4.15.0
+Release:        1%{?dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -15,8 +15,6 @@ BuildRequires:  python3-devel
 Requires:       rtmpdump
 Requires:       python3-qt5
 BuildArch:      noarch
-Patch1:         65_64.diff
-Patch2:         66_65.diff
 
 
 %description
@@ -51,6 +49,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Tue Nov 02 2021 Sérgio Basto <sergio@serjux.com> - 4.15.0-1
+- Update qarte to 4.15.0
+
 * Mon Nov 01 2021 Sérgio Basto <sergio@serjux.com> - 4.14.0-2
 - add fixes from upstream, rfbz #6161
 
