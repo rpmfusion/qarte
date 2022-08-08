@@ -2,8 +2,8 @@
 %global __python %{__python3}
 
 Name:           qarte
-Version:        4.16.0
-Release:        3%{?dist}
+Version:        5.1.0
+Release:        1%{?dist}
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
@@ -49,6 +49,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Mon Aug 08 2022 Martin Gansser <martinkg@fedoraproject.org> - 5.1.0-1
+- Update to 5.1.0
+
 * Sun Aug 07 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 4.16.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
   5.1
