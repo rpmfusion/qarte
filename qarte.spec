@@ -2,18 +2,19 @@
 %global __python %{__python3}
 
 Name:           qarte
-Version:        5.1.0
+Version:        5.2.1
 Release:        1%{?dist}
+Summary:        A browser for arte.tv web site
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
-Summary:        A browser for arte.tv web site
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  gettext
 BuildRequires:  python3-devel
 Requires:       rtmpdump
 Requires:       python3-qt5
+Requires:       python-m3u8
 BuildArch:      noarch
 
 
@@ -22,7 +23,7 @@ Qarte allows browsing the archive of arte+7 & arteLiveWeb sites
 and recording videos.
 
 %prep
-%autosetup -p0
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 
@@ -49,8 +50,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
-* Mon Aug 08 2022 Martin Gansser <martinkg@fedoraproject.org> - 5.1.0-1
-- Update to 5.1.0
+* Wed Mar 29 2023 Martin Gansser <martinkg@fedoraproject.org> - 5.2.1-1
+- Add RR python-m3u8
+- Update to 5.2.1
 
 * Sun Aug 07 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 4.16.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
