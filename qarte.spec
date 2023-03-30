@@ -2,7 +2,6 @@
 %global __python %{__python3}
 
 Name:           qarte
-#Version:        5.2.1
 Version:        5.3.0
 Release:        1%{?dist}
 Summary:        A browser for arte.tv web site
@@ -52,6 +51,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Thu Mar 30 2023 Martin Gansser <martinkg@fedoraproject.org> - 5.3.0-1
+- Update to 5.3.0
+
 * Wed Mar 29 2023 Martin Gansser <martinkg@fedoraproject.org> - 5.2.1-1
 - Add RR python-m3u8
 - Update to 5.2.1
