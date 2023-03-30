@@ -8,7 +8,6 @@ Summary:        A browser for arte.tv web site
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
 Source0:        http://oqapy.eu/releases/%{name}-%{version}.tar.gz
-#                http://www.oqapy.eu/releases/qarte-5.3.0.tar.gz
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  gettext
