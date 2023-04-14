@@ -3,7 +3,7 @@
 
 Name:           qarte
 Version:        5.3.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A browser for arte.tv web site
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
@@ -14,7 +14,7 @@ BuildRequires:  gettext
 BuildRequires:  python3-devel
 Requires:       rtmpdump
 Requires:       python3-qt5
-Requires:       python-m3u8
+Requires:       python3-m3u8
 BuildArch:      noarch
 
 
@@ -50,6 +50,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Fri Apr 14 2023 Leigh Scott <leigh123linux@gmail.com> - 5.3.0-2
+- Fix broken requires
+
 * Thu Mar 30 2023 Martin Gansser <martinkg@fedoraproject.org> - 5.3.0-1
 - Update to 5.3.0
 
