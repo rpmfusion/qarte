@@ -3,7 +3,7 @@
 
 Name:           qarte
 Version:        5.3.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A browser for arte.tv web site
 License:        GPLv3+
 URL:            https://launchpad.net/qarte
@@ -50,6 +50,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Wed Aug 02 2023 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 5.3.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
+
 * Fri Apr 14 2023 Leigh Scott <leigh123linux@gmail.com> - 5.3.0-2
 - Fix broken requires
 
