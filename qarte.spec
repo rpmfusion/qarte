@@ -2,7 +2,7 @@
 %global __python %{__python3}
 
 Name:           qarte
-Version:        5.5.0
+Version:        5.6.0
 Release:        1%{?dist}
 Summary:        A browser for arte.tv web site
 License:        GPLv3+
@@ -50,6 +50,9 @@ cp -pR locale %{buildroot}%{_datadir}
 %{_datadir}/icons/hicolor/96x96/apps/%{name}.png
 
 %changelog
+* Thu Dec 07 2023 Martin Gansser <martinkg@fedoraproject.org> - 5.6.0-1
+- Update to 5.6.0
+
 * Wed Oct 25 2023 Martin Gansser <martinkg@fedoraproject.org> - 5.5.0-1
 - Update to 5.5.0
 
